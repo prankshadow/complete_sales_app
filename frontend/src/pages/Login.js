@@ -36,7 +36,7 @@ const Login = () => {
                         payload: result.data.result.user
                     })
                     setLoading(false)
-                    navigate('/');
+                    navigate('/addsales');
                 }
                 // setEmail('');
                 // setPassword('');

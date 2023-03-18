@@ -13,10 +13,10 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path='/' element={<AddSalesEntry />} ></Route>
+          <Route path='/addsales' element={<AddSalesEntry />} ></Route>
           <Route path='/top5sales' element={<Top5Sales />} ></Route>
           <Route path='/totalrevenue' element={<TotalRevenue />} ></Route>
-          <Route path='/login' element={<Login />} ></Route>
+          <Route path='/' element={<Login />} ></Route>
           <Route path='/signup' element={<Registration />} ></Route>
           {/* <Route path='/logout' element={<Logout />} ></Route> */}
         </Routes>

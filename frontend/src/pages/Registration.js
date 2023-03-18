@@ -2,8 +2,11 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { API_BASE_URL } from '../config'
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const Registration = () => {
+
+    const navigate = useNavigate();
 
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
@@ -28,6 +31,7 @@ const Registration = () => {
                 setFullName('');
                 setEmail('');
                 setPassword('');
+                navigate('/')
             })
             .catch((error) => {
                 console.log(error);

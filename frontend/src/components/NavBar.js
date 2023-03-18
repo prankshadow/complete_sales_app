@@ -13,7 +13,7 @@ const NavBar = (props) => {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         dispatch({ type: "LOGIN_ERROR" });
-        navigate("/login");
+        navigate("/");
     }
 
     let location = useLocation();
@@ -32,10 +32,10 @@ const NavBar = (props) => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            {user?.email ? <> <Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} aria-current="page" to="/">ADD SALES</Link>
+                            {user?.email ? <> <Link className={`nav-link ${location.pathname === "/addsales" ? "active" : ""}`} aria-current="page" to="/addsales">ADD SALES</Link>
                                 <Link className={`nav-link ${location.pathname === "/top5sales" ? "active" : ""}`} to="/top5sales">TOP 5 SALES</Link>
                                 <Link className={`nav-link ${location.pathname === "/totalrevenue" ? "active" : ""}`} to="/totalrevenue">TODAY'S TOTAL REVENUE</Link> </> : ''}
-                            {(!user?.email) ? <><Link className={`nav-link ${location.pathname === "/login" ? "active" : ""}`} to="/login">LOGIN</Link>
+                            {(!user?.email) ? <><Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} to="/">LOGIN</Link>
                                 <Link className={`nav-link ${location.pathname === "/signup" ? "active" : ""}`} to="/signup">REGISTER</Link> </> : ''}
                             {user?.email ? <button className="nav-link bg-transparent border border-0" href="#" onClick={() => logout()}>LOGOUT</button> : ''}
                         </div>
